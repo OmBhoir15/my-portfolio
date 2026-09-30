@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om Bhoir | Portfolio</title>
+    <meta name="description" content="Personal portfolio of Om Bhoir, a fresher at Scaler School of Technology.">
+    
+    <style>
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .section-alt {
+            background-color: #ffffff;
+        }
+
+        
+        header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            position: fixed; /* Keeps header at the top */
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 1px solid #cccccc;
+            z-index: 100; /* Ensures header stays above other content */
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #333333;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+       
+        .hero {
+            padding-top: 150px; /* Space for the fixed header */
+            text-align: center;
+            background-color: #ffffff;
+            padding-bottom: 80px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666666;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #0056b3;
+            color: #ffffff;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #003d82;
+            text-decoration: none;
+        }
+
+       
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .about-text {
+            flex: 1; /* Takes up half the space */
+        }
+
+        .about-text h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .skills-box {
+            flex: 1; /* Takes up the other half of the space */
+            background-color: #ffffff;
+            padding: 30px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        .skills-box h3 {
+            margin-bottom: 15px;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            display: inline-block;
+            background-color: #e9ecef;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+     
+        .projects-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .projects-header h2 {
+            font-size: 32px;
+        }
+
+        .project-card {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #eeeeee;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            margin-bottom: 15px;
+            color: #666666;
+        }
+
+        .project-links a {
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+       
+        .contact-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-header h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .submit-btn {
+            background-color: #0056b3;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background-color: #003d82;
+        }
+
+    
+        footer {
+            background-color: #333333;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #ffffff;
+            margin: 0 10px;
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            color: #cccccc;
+        }
+
+       
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                margin-top: 15px;
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .about-content {
+                flex-direction: column; /* Stacks text and skills on top of each other */
+            }
+
+            .about-text, .skills-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Om Bhoir</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Hello, I am Om Bhoir.</h1>
+                <p>
+                    I am a fresher at Scaler School of Technology. I am passionate about learning Computer Science and AI, and I believe staying curious is the most important thing in life.
+                </p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section section-alt">
+            <div class="container about-content">
+                
+                <div class="about-text">
+                    <h2>Who am I?</h2>
+                    <p>
+                        I am just starting my journey in the tech world as a fresher at Scaler School of Technology. My ultimate goal is to learn new things every day and build something of my own.
+                    </p>
+                    <p>
+                        To me, maintaining a lifelong curiosity is the most important trait anyone can have. I am excited to dive deep into Computer Science, explore Artificial Intelligence, and turn my ideas into reality.
+                    </p>
+                </div>
+
+                <div class="skills-box">
+                    <h3>What I Know</h3>
+                    <ul class="skills-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Java (Basics)</li>
+                        <li>Computer Science</li>
+                        <li>AI Enthusiast</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="projects-header">
+                    <h2>What I've Built</h2>
+                    <p>My first project showcasing my learning.</p>
+                </div>
+
+                <div class="project-card">
+                    <!-- Using a simple placeholder image -->
+                    <img src="https://via.placeholder.com/600x300.png?text=My+Portfolio+Website" alt="Portfolio Preview">
+                    <h3>Personal Portfolio Website</h3>
+                    <p>
+                        <strong>My First Project:</strong> This very website! I built this to apply my fundamental knowledge of HTML and CSS. I just know the basics of HTML and CSS, so I made this website completely from scratch using only those two technologies. No JavaScript!
+                    </p>
+                    <div class="project-links">
+                        <a href="#">Live Link</a>
+                        <a href="#">GitHub Repo</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section section-alt">
+            <div class="container">
+                <div class="contact-header">
+                    <h2>Get in Touch</h2>
+                    <p>
+                        Email me directly at <a href="mailto:ombhoir15@gmail.com">ombhoir15@gmail.com</a><br>
+                        Or connect with me on <a href="https://www.linkedin.com/in/om-bhoir-1b65bb3b2/" target="_blank">LinkedIn</a>.
+                    </p>
+                </div>
+
+                <!-- Basic HTML Form -->
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Built with curiosity by Om Bhoir.</p>
+            <p>
+                <a href="https://www.linkedin.com/in/om-bhoir-1b65bb3b2/" target="_blank">LinkedIn</a> |
+                <a href="mailto:ombhoir15@gmail.com">Email Me</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
